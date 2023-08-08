@@ -1,5 +1,4 @@
-//2023.8.8 19：06修改：开启伪静态路径；gitbook主题；关闭主题切换按钮；开启二级菜单；关闭自定义右键菜单，使用系统菜单；
-//2023.8.8 19：06文章路径删除article并留空，文章网址格式为域名/[slug]；开启鼠标点击烟花特效；修改notion数据库字段名为中文
+//2023.8.8 20:03修改：开启伪静态路径；gitbook主题；关闭主题切换按钮；开启二级菜单；关闭自定义右键菜单，使用系统菜单；文章路径删除article并留空，文章网址格式为域名/[slug]；开启鼠标点击烟花特效；修改notion数据库字段名为中文（注意Notion本地表格形式同步需要修改为中文，确保匹配）
 // 注: process.env.XX是Vercel的环境变量，配置方式见：https://docs.tangly1024.com/article/how-to-config-notion-next#c4768010ae7d44609b744e79e2f9959a
 const BLOG = {
   // Important page_id！！！Duplicate Template from  https://www.notion.so/tanghh/02ab3b8678004aa69e9e415905ef32a5
@@ -355,8 +354,8 @@ const BLOG = {
     status_invisible:
           process.env.NEXT_PUBLIC_NOTION_PROPERTY_STATUS_INVISIBLE || '隐藏发布', // 当status状态值与此相同时为隐藏发布，可以为中文 ， 除此之外其他页面状态不会显示在博客上
     summary: process.env.NEXT_PUBLIC_NOTION_PROPERTY_SUMMARY || '摘要',
-    slug: process.env.NEXT_PUBLIC_NOTION_PROPERTY_SLUG || 'slug',
-    category: process.env.NEXT_PUBLIC_NOTION_PROPERTY_CATEGORY || '类别',
+    slug: process.env.NEXT_PUBLIC_NOTION_PROPERTY_SLUG || '链接',
+    category: process.env.NEXT_PUBLIC_NOTION_PROPERTY_CATEGORY || '分类',
     date: process.env.NEXT_PUBLIC_NOTION_PROPERTY_DATE || '日期',
     tags: process.env.NEXT_PUBLIC_NOTION_PROPERTY_TAGS || '标签',
     icon: process.env.NEXT_PUBLIC_NOTION_PROPERTY_ICON || '图标'
