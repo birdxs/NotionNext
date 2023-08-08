@@ -1,4 +1,4 @@
-//2023.8.8 20:03修改：开启伪静态路径；gitbook主题；关闭主题切换按钮；开启二级菜单；关闭自定义右键菜单，使用系统菜单；文章路径删除article并留空，文章网址格式为域名/[slug]；开启鼠标点击烟花特效；修改notion数据库字段名为中文（注意Notion本地表格形式同步需要修改为中文，确保匹配）
+//2023.8.8 20:03修改:开启伪静态路径;gitbook主题;关闭主题切换按钮;开启二级菜单;关闭自定义右键菜单,使用系统菜单;文章路径删除article并留空,文章网址格式为域名/[slug];开启鼠标点击烟花特效;修改notion数据库字段名为中文(注意Notion本地表格形式同步需要修改为中文,确保匹配)
 // 注: process.env.XX是Vercel的环境变量，配置方式见：https://docs.tangly1024.com/article/how-to-config-notion-next#c4768010ae7d44609b744e79e2f9959a
 const BLOG = {
   // Important page_id！！！Duplicate Template from  https://www.notion.so/tanghh/02ab3b8678004aa69e9e415905ef32a5
