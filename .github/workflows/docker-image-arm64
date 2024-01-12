@@ -6,12 +6,20 @@ name: Build docker-image-arm64
 # documentation.
 
 on:
-  push:
-    branches: [main]
+  #push:
+    #branches: [main]
     # Publish semver tags as releases.
-    tags: ["v*.*.*"]
-  pull_request:
-    branches: [main]
+    #tags: ["v*.*.*"]
+  #pull_request:
+    #branches: [main]
+  workflow_dispatch:
+    # branches:
+    #  - master
+     inputs:
+      image_tag:
+        description: ''
+        required: true
+        #default: 'unstable'
 
 env:
   # Use docker.io for Docker Hub if empty
