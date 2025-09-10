@@ -3,9 +3,12 @@ name: Build and Push Multi-arch Docker Image to Docker Hub
 on:
   push:
     branches: [main]
-    tags: ["v*.*.*"]
-  pull_request:
-    branches: [main]
+
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: 'Image tag version'
+        required: true
 
 env:
   # Docker Hub 配置
