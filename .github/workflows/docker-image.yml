@@ -1,5 +1,5 @@
 name: Build and Push Multi-arch Docker Image to Docker Hub
-
+#2025.9.10 使用deepseek优化后的代码，编译arm64、amd64架构镜像并推送至dockerhub
 on:
   push:
     branches: [main]
