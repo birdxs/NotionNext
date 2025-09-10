@@ -1,5 +1,5 @@
 name: Docker Hub Push
-
+#2025.9.10更新终版，以后用这个推送镜像
 on:
   push:
     branches: [main]
@@ -11,7 +11,7 @@ on:
       image_tag:
         description: 'Image tag version'
         required: true
-        default: 'latest'
+       # default: 'latest'
 
 env:
   REGISTRY: docker.io
@@ -53,7 +53,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ github.event.inputs.image_tag || 'latest' }}
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Output image info
