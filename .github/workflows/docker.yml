@@ -42,10 +42,10 @@ jobs:
           images: ${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=${{ github.event.inputs.image_tag || 'latest' }}
-            type=ref,event=branch
-            type=ref,event=tag
-            type=ref,event=pr
-            type=sha
+            #type=ref,event=branch
+            #type=ref,event=tag
+            #type=ref,event=pr
+            #type=sha
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -53,7 +53,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ github.event.inputs.image_tag || 'latest' }}
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Output image info
